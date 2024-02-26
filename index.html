@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <body>
-            <a href="https://github.com/AbdulAaqib"><img src="assets/images/github_icon.png" alt="github_icon" style="width:auto;height:auto;"></a>
-        </body>
-        </head>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Pages</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Hello World!</h1>
-    <p>My name is Abdul Ali :)</p>
-    <img src="assets/images/iceberg.jpg" alt="Profile pic">
+        <style>
+        * {
+          box-sizing: border-box;
+        }
+        .column {
+          float: left;
+          width: 2%;
+          padding: 5px;
+        }
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        </style>
+    </head>
+    <body>    
+        <h1>Hello!</h1>
+        <font size="5">My name is Abdul Ali :)</font>
+        <font size="5">AI and Machine Learning enthusiast with a passion for data-driven projects.</font>
+        <div class="row">
+            <div class="column">
+                <p><a href="https://linkedin.com/in/abdulaaqib"><img src="assets/images/linkedin_icon.png" alt="linkedin" style="width:30px;height:30px;"></a></p>
+            </div>
+            <div class="column">
+                <p><a href="https://github.com/AbdulAaqib"><img src="assets/images/github_icon.png" alt="github_icon" style="width:30px;height:30px;"></a></p>
+            </div>
+          </div>
 
-</body>
-
+        <img src="assets/images/iceberg.jpg" alt="Profile pic">
+    </body>   
 </html>
