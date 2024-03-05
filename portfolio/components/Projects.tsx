@@ -25,7 +25,7 @@ function Projects({ projects }: Props) {
             <div className="relative w-full flex overflow-x-scroll snap-x snap-mandatory 
             z-20 scrollbar-thin scrollbar-track-[#7FFF1E]/20 scrollbar-thumb-[#7FFF1E]/60 space-x-10">
                 {sortedProjects.map((project, i) => (
-                    <div key={project.id} className='w-screen flex-shrink-0 snap-center flex flex-col items-center justify-evenly p-10 md:p-10 h-220'>
+                    <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col items-center justify-evenly p-10 md:p-10 h-220'>
                         <motion.img 
                             className={`w-[${project.width}px] h-[${project.height}px]`}
                             initial ={{
