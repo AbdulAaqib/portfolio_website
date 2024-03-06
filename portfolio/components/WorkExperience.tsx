@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import ExperienceCard from './ExperienceCard';
 import { Experience } from '../typings';
 type Props = {
-  experiences: Experience;
+  experiences: Experience[];
 }
 
 function WorkExperience({ experiences }: Props) {

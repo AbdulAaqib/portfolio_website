@@ -42,8 +42,8 @@ export interface Skill extends SanityBody {
 }
 
 export interface Experience extends SanityBody {
-    sort(arg0: (a: any, b: any) => number): unknown;
-    map(arg0: (experience: any) => import("react").JSX.Element): import("react").ReactNode | Iterable<import("react").ReactNode>;
+    //sort(arg0: (a: any, b: any) => number): unknown;
+    //map(arg0: (experience: any) => import("react").JSX.Element): import("react").ReactNode | Iterable<import("react").ReactNode>;
     _type: "experience";
     company: string;
     companyImage: Image;
@@ -53,6 +53,7 @@ export interface Experience extends SanityBody {
     jobTitle: string;
     points: string[];
     technologies: Technology[];
+    order: number;
 }
 
 export interface Project extends SanityBody {
@@ -66,7 +67,7 @@ export interface Project extends SanityBody {
     summary: string;
     technologies: Technology[];
     width: number;
-    height: number;
+    heigth: number;
     projectGithubLink: string;
 }
 

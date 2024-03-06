@@ -28,7 +28,7 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
     <div className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory 
     overflow-y-scroll overflow-x-hidden z-30 scrollbar scrollbar-track-[#7FFF1E]/20 scrollbar-thumb-[#7FFF1E]/60'>
       <Head>
-        <title>{pageInfo?.name} - Portfolio</title>
+        <title>{String(pageInfo?.name)} - Portfolio</title>
       </Head>
       <Header socials={socials}/>
 
@@ -91,3 +91,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     revalidate: 10,
   }
 }
+
+
+

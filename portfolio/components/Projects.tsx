@@ -27,7 +27,7 @@ function Projects({ projects }: Props) {
                 {sortedProjects.map((project, i) => (
                     <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col items-center justify-evenly p-10 md:p-10 h-220'>
                         <motion.img 
-                            className={`w-[${project.width}px] h-[${project.height}px]`}
+                            className={`w-[${project.width}px] h-[${project.heigth}px]`}
                             initial ={{
                                 y: 100,
                                 opacity: 0,

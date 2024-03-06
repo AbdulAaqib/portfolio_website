@@ -7,8 +7,7 @@ const query = groq`
     *[_type == "experience"] {
       ...,
       technologies[]->
-    }
-`;
+    }`;
 
 type Data = {
       experiences: Experience[];
