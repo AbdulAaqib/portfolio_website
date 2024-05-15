@@ -1,12 +1,7 @@
 import type { GetStaticProps } from 'next';
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Head from 'next/head';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import About from '../components/About';
-import WorkExperience from '../components/WorkExperience';
-import Skills from '../components/Skills';
-import Projects from '../components/Projects';
-import ContactMe from '../components/ContactMe';
+
 import Link from 'next/link';
 import { Experience, PageInfo, Project, Skill, Social } from '../typings';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
@@ -14,6 +9,13 @@ import { fetchExperiences } from '../utils/fetchExperience';
 import { fetchSkills } from '../utils/fetchSkills';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSocial } from '../utils/fetchSocials';
+import Header from '../components/Header';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import WorkExperience from '../components/WorkExperience';
+import Skills from '../components/Skills';
+import Projects from '../components/Projects';
+import ContactMe from '../components/ContactMe';
 
 type Props = {
   pageInfo: PageInfo;
