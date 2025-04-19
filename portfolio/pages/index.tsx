@@ -1,5 +1,4 @@
 import type { GetStaticProps } from 'next';
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Head from 'next/head';
 
 import Link from 'next/link';
