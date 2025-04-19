@@ -1,12 +1,19 @@
+// utils/fetchProjects.ts
 import { Project } from "../typings";
+import { createClient } from 'next-sanity';
 
-export const fetchProjects = async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getProjects`);
+const client = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  apiVersion: "2023-04-19",
+  useCdn: false,
+});
 
-    const data = await res.json();
-    const projects: Project[] = data.projects;
-
-    //console.log("fetching", projects)
-
-    return projects;
-}
+export const fetchProjects = async (): Promise<Project[]> => {
+  const query = `*[_type == "project"] | order(_createdAt desc) {
+    ...,
+    technologies[]->
+  }`;
+  const projects: Project[] = await client.fetch(query);
+  return projects;
+};
