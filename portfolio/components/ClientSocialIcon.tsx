@@ -14,5 +14,5 @@ const SocialIcon = dynamic(
 );
 
 export default function ClientSocialIcon(props: SocialIconProps) {
-  return <SocialIcon {...props} />;
+  return <SocialIcon {...props} target="_blank" rel="noopener noreferrer" />;
 } 

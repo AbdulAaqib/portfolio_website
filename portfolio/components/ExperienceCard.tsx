@@ -10,14 +10,14 @@ type Props = {
 
 function ExperienceCard({ experience }: Props) {
     return (
-        <article className='flex flex-col rounded-lg items-center space-y-4 flex-shrink-0 
-        w-full md:w-[850px] glass-card py-4 md:py-6 opacity-100'>
+        <article className='flex flex-col rounded-lg items-center space-y-2 flex-shrink-0 
+        w-full md:w-[850px] glass-card py-3 md:py-4 opacity-100'>
             <motion.div
                 initial={{ opacity: 0, y: -100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2 }}
                 viewport={{ once: true }}
-                className='w-24 h-24 md:w-28 md:h-28 relative'
+                className='w-32 h-32 md:w-36 md:h-36 relative'
             >
                 <Image
                     src={urlFor(experience?.companyImage)}
@@ -28,27 +28,27 @@ function ExperienceCard({ experience }: Props) {
                 />
             </motion.div>
 
-            <div className='px-0 md:px-6'>
-                <h4 className='text-xl md:text-2xl font-light text-adaptive'>
+            <div className='px-0 md:px-6 w-full'>
+                <h4 className='text-2xl md:text-3xl font-light text-adaptive text-center'>
                     {experience?.jobTitle}
                 </h4>
-                <p className='font-bold text-base mt-1 text-adaptive'>
+                <p className='font-bold text-lg md:text-xl mt-1 text-adaptive text-center'>
                     {experience?.company}
                 </p>
-                <div className='flex space-x-2 my-1.5'>
+                <div className='flex flex-wrap gap-x-2 gap-y-1 my-2 justify-center items-center'>
                     {experience?.technologies?.map((technology) => (
-                        <div key={technology._id} className='h-6 w-6 md:h-8 md:w-8 relative'>
+                        <div key={technology._id} className='relative' style={{ width: '2.5rem', height: '2.5rem' }}>
                             <Image
                                 src={urlFor(technology.image)}
                                 alt={technology.title || ''}
-                                className='rounded-full object-cover'
+                                className='object-contain'
                                 fill
                                 unoptimized={urlFor(technology.image).toLowerCase().endsWith('.gif')}
                             />
                         </div>
                     ))}
                 </div>
-                <p className='uppercase py-2 text-sm text-adaptive-secondary'>
+                <p className='uppercase py-1 text-base md:text-lg text-adaptive text-center'>
                     {new Date(experience?.dateStarted).toDateString()} -{" "}
                     {experience?.isCurrentlyWorkingHere
                         ? "Present"
@@ -56,12 +56,17 @@ function ExperienceCard({ experience }: Props) {
                     }
                 </p>
 
-                <div className='max-h-[250px] md:max-h-[300px] overflow-y-auto scrollbar-blue pr-3'>
-                    <ul className='list-disc space-y-2 ml-4 text-xs md:text-sm text-adaptive-secondary'>
-                        {experience?.points?.map((point, i) => (
-                            <li key={i} className='text-adaptive-secondary'>{point}</li>
-                        ))}
-                    </ul>
+                {/* Points Container */}
+                <div className='mt-4 px-2 md:px-4 pb-2'>
+                    <div className='h-[250px] md:h-[180px] overflow-y-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0EA5E9]/80'>
+                        <ul className='list-disc list-inside space-y-1.5 md:space-y-3 text-xs md:text-base text-[var(--text-color-secondary)]'>
+                            {experience.points.map((point, i) => (
+                                <li key={i} className='leading-relaxed'>
+                                    {point}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </article>

@@ -28,17 +28,19 @@ function Projects({ projects }: Props) {
     };
 
     return (
-        <div className='section-container'>
-            <motion.h3 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className='absolute top-[90px] md:top-[120px] uppercase tracking-[20px] text-[var(--text-color)] 
-                text-2xl text-center px-8 py-2 glass-title'
-            >
-                Projects
-            </motion.h3>
-            <div className='relative w-full max-w-full md:max-w-7xl mx-auto px-2 md:px-4 mt-48 md:mt-52'>
+        <div className='section-container scroll-mt-[84px]'>
+            <div className='w-full flex justify-center mt-28 md:mt-8'>
+                <motion.h3 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className='relative top-0 md:top-4 uppercase tracking-[8px] md:tracking-[20px] text-adaptive 
+                    text-base md:text-2xl text-center px-4 md:px-10 py-1.5 md:py-2 glass-title'
+                >
+                    Projects
+                </motion.h3>
+            </div>
+            <div className='relative w-full max-w-full md:max-w-7xl mx-auto px-2 md:px-4 mt-16 md:mt-16'>
                 {/* Navigation dots for mobile */}
                 <div className='flex justify-center space-x-2 mb-4 md:hidden'>
                     {sortedProjects.map((_, index) => (
@@ -53,17 +55,17 @@ function Projects({ projects }: Props) {
                 </div>
 
                 {/* Projects container */}
-                <div className='relative h-[600px] md:h-[800px] flex flex-col'>
+                <div className='relative h-[450px] md:h-[600px] flex flex-col'>
                     {/* Navigation buttons */}
                     <button
                         onClick={handlePrevious}
-                        className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-12 
-                        bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-2 rounded-full z-10 glass-title'
+                        className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 md:-translate-x-12 
+                        bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-1.5 md:p-2 rounded-full z-10 glass-title'
                     >
-                        <ChevronLeftIcon className='h-6 w-6 text-[#0EA5E9]' />
+                        <ChevronLeftIcon className='h-5 w-5 md:h-6 md:w-6 text-[#0EA5E9]' />
                     </button>
 
-                    <div className='overflow-x-hidden h-full w-full flex items-center touch-pan-x'>
+                    <div className='overflow-x-hidden h-full w-full flex items-center touch-pan-x px-6 md:px-20'>
                         <div 
                             className='flex h-full transition-transform duration-500 ease-in-out w-full'
                             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
@@ -71,7 +73,7 @@ function Projects({ projects }: Props) {
                             {sortedProjects.map((project) => (
                                 <div 
                                     key={project._id} 
-                                    className='w-full flex-shrink-0 px-4 md:px-10'
+                                    className='w-full flex-shrink-0 px-1 md:px-10'
                                 >
                                     <div className='glass-card flex flex-col'>
                                         {/* Project Image Container */}
@@ -80,7 +82,7 @@ function Projects({ projects }: Props) {
                                                 initial={{ opacity: 0 }}
                                                 whileInView={{ opacity: 1 }}
                                                 transition={{ duration: 0.5 }}
-                                                className='relative flex items-center justify-center h-[120px] md:h-[160px] w-full'
+                                                className='relative flex items-center justify-center h-[100px] md:h-[160px] w-full'
                                             >
                                                 <Image
                                                     src={urlFor(project?.image)}
@@ -96,7 +98,7 @@ function Projects({ projects }: Props) {
                                         <div className='flex flex-col'>
                                             <div className='p-2 md:p-3'>
                                                 <div className='flex items-start justify-between mb-1'>
-                                                    <h4 className='text-lg md:text-2xl font-semibold text-[var(--text-color)] pr-2 md:pr-3 leading-tight'>
+                                                    <h4 className='text-base md:text-2xl font-semibold text-[var(--text-color)] pr-2 md:pr-3 leading-tight'>
                                                         {project.title}
                                                     </h4>
                                                     <div className='flex-shrink-0 cursor-pointer hover:scale-110 transition-transform ml-1'>
@@ -107,7 +109,7 @@ function Projects({ projects }: Props) {
                                                             className='text-[var(--text-color-secondary)] hover:text-[var(--text-color)] transition-colors duration-300'
                                                         >
                                                             <svg 
-                                                                className="w-5 h-5 md:w-6 md:h-6 hover:scale-110 transition-transform duration-300"
+                                                                className="w-4 h-4 md:w-6 md:h-6 hover:scale-110 transition-transform duration-300"
                                                                 fill="currentColor"
                                                                 viewBox="0 0 24 24"
                                                                 aria-hidden="true"
@@ -123,13 +125,13 @@ function Projects({ projects }: Props) {
                                                 </div>
 
                                                 {/* Technologies */}
-                                                <div className='flex flex-wrap gap-4 py-4'>
+                                                <div className='flex flex-wrap gap-2 py-2 md:py-4 justify-start'>
                                                     {project.technologies.map((technology) => (
                                                         <div 
                                                             key={technology._id}
                                                             className='group relative'
                                                         >
-                                                            <div className='relative h-14 w-14 md:h-16 md:w-16'>
+                                                            <div className='relative h-10 w-10 md:h-20 md:w-20'>
                                                                 <Image 
                                                                     className='object-contain filter hover:grayscale transition-all duration-300 hover:scale-110'
                                                                     src={urlFor(technology.image)}
@@ -140,7 +142,7 @@ function Projects({ projects }: Props) {
                                                             </div>
                                                             <div className='absolute -top-8 left-1/2 -translate-x-1/2 
                                                                 opacity-0 group-hover:opacity-100 transition-opacity duration-200
-                                                                glass-effect px-2.5 py-1.5 rounded-lg text-xs md:text-sm text-[var(--text-color)] whitespace-nowrap'>
+                                                                glass-effect px-2 py-1 rounded-lg text-xs md:text-sm text-[var(--text-color)] whitespace-nowrap'>
                                                                 {technology.title}
                                                             </div>
                                                         </div>
@@ -150,12 +152,12 @@ function Projects({ projects }: Props) {
 
                                             {/* Project Summary */}
                                             <div className='px-2 md:px-3 pb-4'>
-                                                <div className='h-[220px] md:h-[300px] overflow-y-auto scrollbar-blue'>
-                                                    <ul className='list-disc list-inside space-y-3'>
+                                                <div className='h-[180px] md:h-[200px] overflow-y-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0EA5E9]/80 pr-4'>
+                                                    <ul className='list-disc list-inside space-y-2 md:space-y-3'>
                                                         {project.summary.split('• ').filter(Boolean).map((point, index) => (
                                                             <li 
                                                                 key={index} 
-                                                                className='text-sm md:text-base text-[var(--text-color-secondary)] leading-relaxed pl-1'
+                                                                className='text-xs md:text-base text-[var(--text-color-secondary)] leading-relaxed pl-1'
                                                                 style={{ display: 'list-item' }}
                                                             >
                                                                 {point.trim()}
@@ -173,28 +175,30 @@ function Projects({ projects }: Props) {
 
                     <button
                         onClick={handleNext}
-                        className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-12 
-                        bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-2 rounded-full z-10 glass-title'
+                        className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 md:translate-x-12 
+                        bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-1.5 md:p-2 rounded-full z-10 glass-title'
                     >
-                        <ChevronRightIcon className='h-6 w-6 text-[#0EA5E9]' />
+                        <ChevronRightIcon className='h-5 w-5 md:h-6 md:w-6 text-[#0EA5E9]' />
                     </button>
                 </div>
 
-                {/* Progress bar */}
-                <div className='relative w-full h-2 bg-gray-800 rounded-full mt-8 hidden md:block'>
-                    <div 
-                        className='absolute h-full bg-[#0EA5E9]/40 rounded-full transition-all duration-500'
-                        style={{
-                            width: `${100 / projects.length}%`,
-                            left: `${(currentIndex * 100) / projects.length}%`
-                        }}
-                    />
-                </div>
+                <div className='flex flex-col gap-1 mt-2 md:-mt-2'>
+                    {/* Progress bar */}
+                    <div className='relative w-full h-2 bg-gray-800 rounded-full hidden md:block'>
+                        <div 
+                            className='absolute h-full bg-[#0EA5E9]/40 rounded-full transition-all duration-500'
+                            style={{
+                                width: `${100 / projects.length}%`,
+                                left: `${(currentIndex * 100) / projects.length}%`
+                            }}
+                        />
+                    </div>
 
-                {/* Project counter */}
-                <div className='text-center mt-4 text-[var(--text-color-muted)]'>
-                    <span className='text-[var(--accent-color)]'>{currentIndex + 1}</span>
-                    <span> / {projects.length}</span>
+                    {/* Project counter */}
+                    <div className='text-center text-[var(--text-color-muted)]'>
+                        <span className='text-[var(--accent-color)]'>{currentIndex + 1}</span>
+                        <span> / {projects.length}</span>
+                    </div>
                 </div>
             </div>
         </div>

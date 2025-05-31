@@ -21,17 +21,19 @@ function WorkExperience({ experiences }: Props) {
     };
 
     return (
-        <div className='section-container'>
-            <motion.h3 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className='absolute top-[90px] md:top-[100px] uppercase tracking-[20px] text-adaptive 
-                text-2xl text-center px-10 py-2 glass-title'
-            >
-                Experience
-            </motion.h3>
-            <div className='w-full max-w-full md:max-w-7xl mx-auto px-2 md:px-4 mt-48 md:mt-32'>
+        <div className='section-container scroll-mt-[84px] h-screen flex flex-col justify-center'>
+            <div className='w-full flex justify-center mt-20 md:mt-16'>
+                <motion.h3 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className='relative uppercase tracking-[8px] md:tracking-[20px] text-adaptive 
+                    text-base md:text-2xl text-center px-4 md:px-10 py-1.5 md:py-2 glass-title'
+                >
+                    Experience
+                </motion.h3>
+            </div>
+            <div className='w-full max-w-full md:max-w-7xl mx-auto px-2 md:px-4 mt-16 md:mt-24'>
                 {/* Navigation dots for mobile */}
                 <div className='flex justify-center space-x-2 mb-4 md:hidden'>
                     {experiences.map((_, index) => (
@@ -46,23 +48,26 @@ function WorkExperience({ experiences }: Props) {
                 </div>
 
                 {/* Experience cards container */}
-                <div className='relative h-[600px] md:h-[680px] flex items-center'>
+                <div className='relative h-[500px] md:h-[600px] flex items-center'>
                     {/* Navigation buttons */}
                     <button
                         onClick={handlePrevious}
-                        className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-12 
+                        className='absolute left-0 top-1/2 -translate-y-1/2 translate-x-1 md:translate-x-2 
                         bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-2 rounded-full z-10 glass-title'
                     >
                         <ChevronLeftIcon className='h-6 w-6 text-[#0EA5E9]' />
                     </button>
 
-                    <div className='overflow-x-hidden h-full w-full flex items-center touch-pan-x'>
+                    <div className='w-full h-full'>
                         <div 
-                            className='flex h-full transition-transform duration-500 ease-in-out w-full'
+                            className='flex h-full transition-transform duration-500 ease-in-out'
                             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                         >
                             {sortedExperiences?.map((experience) => (
-                                <div key={experience._id} className='w-full flex-shrink-0 overflow-y-auto scrollbar-blue flex items-center justify-center'>
+                                <div 
+                                    key={experience._id} 
+                                    className='w-full flex-shrink-0 flex items-center justify-center px-2 md:px-4'
+                                >
                                     <ExperienceCard experience={experience} />
                                 </div>
                             ))}
@@ -71,28 +76,30 @@ function WorkExperience({ experiences }: Props) {
 
                     <button
                         onClick={handleNext}
-                        className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-12 
+                        className='absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1 md:-translate-x-2 
                         bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-2 rounded-full z-10 glass-title'
                     >
                         <ChevronRightIcon className='h-6 w-6 text-[#0EA5E9]' />
                     </button>
                 </div>
 
-                {/* Timeline indicator */}
-                <div className='relative w-full h-2 bg-gray-800 rounded-full mt-8 hidden md:block'>
-                    <div 
-                        className='absolute h-full bg-[#0EA5E9]/40 rounded-full transition-all duration-500'
-                        style={{
-                            width: `${100 / experiences.length}%`,
-                            left: `${(currentIndex * 100) / experiences.length}%`
-                        }}
-                    />
-                </div>
+                <div className='flex flex-col gap-1 mt-2'>
+                    {/* Timeline indicator */}
+                    <div className='relative w-full h-2 bg-gray-800 rounded-full hidden md:block'>
+                        <div 
+                            className='absolute h-full bg-[#0EA5E9]/40 rounded-full transition-all duration-500'
+                            style={{
+                                width: `${100 / experiences.length}%`,
+                                left: `${(currentIndex * 100) / experiences.length}%`
+                            }}
+                        />
+                    </div>
 
-                {/* Experience counter */}
-                <div className='text-center mt-4 text-gray-400'>
-                    <span className='text-[#0EA5E9]/70'>{currentIndex + 1}</span>
-                    <span> / {experiences.length}</span>
+                    {/* Experience counter */}
+                    <div className='text-center text-gray-400'>
+                        <span className='text-[#0EA5E9]/70'>{currentIndex + 1}</span>
+                        <span> / {experiences.length}</span>
+                    </div>
                 </div>
             </div>
         </div>

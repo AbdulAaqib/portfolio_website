@@ -9,27 +9,25 @@ type Props = {
 
 function Skills({ skills }: Props) {
   return (
-    <div className='section-container'>
-      <motion.h3 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className='absolute top-[90px] md:top-[120px] uppercase tracking-[20px] text-adaptive 
-        text-2xl text-center px-10 py-2 glass-title'
-      >
-        Skills
-      </motion.h3>
-      <div className='relative w-full max-w-full md:max-w-[1200px] mx-auto px-1 mt-40 md:mt-44'>
-        <motion.div 
+    <div className='section-container scroll-mt-[84px]'>
+      <div className='w-full flex justify-center mt-12 md:mt-8'>
+        <motion.h3 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className='grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-1 md:gap-4 min-h-[400px] md:min-h-[500px]'
+          className='relative uppercase tracking-[8px] md:tracking-[20px] text-adaptive 
+          text-base md:text-2xl text-center px-4 md:px-10 py-1.5 md:py-2 glass-title'
         >
+          Skills
+        </motion.h3>
+      </div>
+
+      <div className='flex relative flex-col text-center items-center justify-center px-4 md:px-10 max-w-7xl mx-auto mt-4 md:mt-16'>
+        <div className='grid grid-cols-4 md:grid-cols-6 xl:grid-cols-8 gap-4 md:gap-5'>
           {skills?.map((skill) => (
             <Skill key={skill._id} skill={skill} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
