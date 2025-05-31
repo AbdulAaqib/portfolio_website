@@ -1,0 +1,7 @@
+npx sanity dev
+
+light mode background = https://prod.spline.design/f-jsmbq1noqLdAxu/scene.splinecode
+
+dark mode background = "https://prod.spline.design/zZVPN1iqiFCGXOaC/scene.splinecode"
+
+always present = "https://prod.spline.design/3JaP6TsLBfWbpVC2/scene.splinecode"

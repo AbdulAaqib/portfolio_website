@@ -2,36 +2,36 @@ import React from 'react'
 import { motion } from 'framer-motion';
 import Skill from './Skill';
 import { Skill as SkillType} from '../typings';
+
 type Props = {
   skills: SkillType[];
 }
 
 function Skills({ skills }: Props) {
-  return( 
-  <motion.div 
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ opacity: 1.5 }}
-    className='flex relative flex-col text-center md:text-left 
-    xl:flex-row max-w-[1000px] xl:px-10 min-h-screen justify-center xl:space-y-10 
-    mx-auto items-center'>
-    <h3 className='absolute top-14 uppercase tracking-[20px]
-        text-[#7FFF1E]/70 text-2xl'>
-            Skills
-    </h3>
-    <h3 className='absolute top-24 uppercase tracking-[3px]
-        text-gray-500 text-sm '>
-            Hover over skill for current profienciency
-    </h3>
-    <div className='grid grid-cols-5 gap-5 '>
-      {skills?.slice(0, skills.length / 2).map((skill) => (
-        <Skill key={skill._id} skill={skill}/>
-      ))}
-      {skills?.slice(skills.length / 2, skills.length).map((skill) => (
-        <Skill key={skill._id} skill={skill} directionLeft/>
-      ))}
+  return (
+    <div className='section-container'>
+      <motion.h3 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className='absolute top-[90px] md:top-[120px] uppercase tracking-[20px] text-adaptive 
+        text-2xl text-center px-10 py-2 glass-title'
+      >
+        Skills
+      </motion.h3>
+      <div className='relative w-full max-w-full md:max-w-[1200px] mx-auto px-1 mt-40 md:mt-44'>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className='grid grid-cols-3 md:grid-cols-5 lg:grid-cols-7 gap-1 md:gap-4 min-h-[400px] md:min-h-[500px]'
+        >
+          {skills?.map((skill) => (
+            <Skill key={skill._id} skill={skill} />
+          ))}
+        </motion.div>
+      </div>
     </div>
-  </motion.div>
   );
 }
 
