@@ -52,9 +52,11 @@ export default function About({ pageInfo }: Props) {
                     transition={{ duration: 1.0 }}
                     className='space-y-4 px-4 md:px-8 max-w-2xl'
                 >
-                    <h4 className='text-lg md:text-2xl font-semibold text-adaptive glass-title px-4 md:px-6 py-2 md:py-3 flex flex-row flex-nowrap items-center whitespace-nowrap'>
-                        Here is a brief<span className='underline decoration-[#0EA5E9] mx-1'>background</span>on myself<span className='ml-1'>👋</span>
-                    </h4>
+                    <div className='flex justify-center'>
+                        <h4 className='text-lg md:text-2xl font-semibold text-adaptive glass-title px-4 md:px-6 py-2 md:py-3 inline-flex flex-row items-center whitespace-nowrap'>
+                            Here is a brief<span className='underline decoration-[#0EA5E9] mx-1'>background</span>on myself<span className='ml-1'>👋</span>
+                        </h4>
+                    </div>
                     <div className='glass-title'>
                         <div className='h-[300px] md:h-[300px] overflow-y-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0EA5E9]/80 px-6 py-4'>
                             <p className='text-sm md:text-base text-adaptive-secondary leading-relaxed'>
