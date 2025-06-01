@@ -8,6 +8,7 @@ export const project = {
       title: "title",
       description: "Title of the project",
       type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "image",
@@ -15,12 +16,14 @@ export const project = {
       type: "image",
       options: {
         hotspot: true,
-      }
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "summary",
       title: "summary",
       type: "text",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "technologies",

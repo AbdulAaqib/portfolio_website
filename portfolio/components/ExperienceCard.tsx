@@ -58,8 +58,8 @@ function ExperienceCard({ experience }: Props) {
 
                 {/* Points Container */}
                 <div className='mt-4 px-2 md:px-4 pb-2'>
-                    <div className='h-[250px] md:h-[180px] overflow-y-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0EA5E9]/80'>
-                        <ul className='list-disc list-inside space-y-1.5 md:space-y-3 text-xs md:text-base text-[var(--text-color-secondary)]'>
+                    <div className='h-[140px] md:h-[140px] overflow-y-auto scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#0EA5E9]/80'>
+                        <ul className='list-disc list-inside space-y-1.5 md:space-y-2 text-xs md:text-base text-[var(--text-color-secondary)]'>
                             {experience.points.map((point, i) => (
                                 <li key={i} className='leading-relaxed'>
                                     {point}

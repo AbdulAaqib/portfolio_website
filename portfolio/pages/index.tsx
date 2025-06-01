@@ -99,12 +99,12 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         </section>
 
         <Link href="#hero">
-          <div className='fixed bottom-5 right-5 z-50'>
-            <div className='flex items-center justify-center w-40 h-12 rounded-full 
+          <div className='fixed bottom-4 right-4 md:bottom-5 md:right-5 z-50'>
+            <div className='flex items-center justify-center w-10 h-10 md:w-40 md:h-12 rounded-full 
             filter hover:grayscale cursor-pointer hover:scale-105 transition-all duration-300
             border border-[#0EA5E9]/20 hover:border-[#0EA5E9]/50
             bg-[rgb(17,25,40)] backdrop-blur-lg backdrop-saturate-200 shadow-lg'>
-              <ChevronUpIcon className='w-8 h-8 text-[#0EA5E9]' />
+              <ChevronUpIcon className='w-6 h-6 md:w-8 md:h-8 text-[#0EA5E9]' />
             </div>
           </div>
         </Link>

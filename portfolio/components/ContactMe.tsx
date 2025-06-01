@@ -39,25 +39,25 @@ function ContactMe({ pageInfo }: Props) {
                 </motion.h3>
             </div>
 
-            <div className='flex flex-col items-center justify-center space-y-4 md:space-y-6 w-full max-w-7xl mx-auto px-4 md:px-10 mt-16 md:mt-16'>
-                <h4 className='text-base md:text-xl text-center text-[var(--text-color-secondary)]'>
+            <div className='flex flex-col items-center justify-center space-y-4 md:space-y-4 w-full max-w-7xl mx-auto px-4 md:px-10 mt-16 md:mt-12'>
+                <h4 className='text-base md:text-lg text-center text-[var(--text-color-secondary)]'>
                     I&apos;ve got just what you need. <span className='underline decoration-[#0EA5E9]'>Let&apos;s Talk.</span>
                 </h4>
 
-                <div className='space-y-3 md:space-y-4 w-full max-w-md'>
-                    <div className='flex items-center justify-center space-x-5 glass-card p-2 md:p-3'>
-                        <PhoneIcon className='text-[#0EA5E9] h-6 w-6 animate-pulse'/>
-                        <p className='text-sm md:text-base text-[var(--text-color)]'>{pageInfo?.phoneNumber}</p>
+                <div className='space-y-3 md:space-y-3 w-full max-w-md'>
+                    <div className='flex items-center justify-center space-x-5 glass-card p-2 md:p-2.5'>
+                        <PhoneIcon className='text-[#0EA5E9] h-6 w-6 md:h-5 md:w-5 animate-pulse'/>
+                        <p className='text-sm md:text-sm text-[var(--text-color)]'>{pageInfo?.phoneNumber}</p>
                     </div>
 
-                    <div className='flex items-center justify-center space-x-5 glass-card p-2 md:p-3'>
-                        <EnvelopeIcon className='text-[#0EA5E9] h-6 w-6 animate-pulse'/>
-                        <p className='text-sm md:text-base text-[var(--text-color)]'>{pageInfo?.email}</p>
+                    <div className='flex items-center justify-center space-x-5 glass-card p-2 md:p-2.5'>
+                        <EnvelopeIcon className='text-[#0EA5E9] h-6 w-6 md:h-5 md:w-5 animate-pulse'/>
+                        <p className='text-sm md:text-sm text-[var(--text-color)]'>{pageInfo?.email}</p>
                     </div>
 
-                    <div className='flex items-center justify-center space-x-5 glass-card p-2 md:p-3'>
-                        <MapPinIcon className='text-[#0EA5E9] h-6 w-6 animate-pulse'/>
-                        <p className='text-sm md:text-base text-[var(--text-color)]'>{pageInfo?.address}</p>
+                    <div className='flex items-center justify-center space-x-5 glass-card p-2 md:p-2.5'>
+                        <MapPinIcon className='text-[#0EA5E9] h-6 w-6 md:h-5 md:w-5 animate-pulse'/>
+                        <p className='text-sm md:text-sm text-[var(--text-color)]'>{pageInfo?.address}</p>
                     </div>
                 </div>
 
@@ -66,18 +66,18 @@ function ContactMe({ pageInfo }: Props) {
                     className='flex flex-col space-y-2 w-full max-w-md mx-auto'
                 >
                     <div className='flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2'>
-                        <input {...register('name')} placeholder='Name' className='contactInput' type='text'/>
-                        <input {...register('email')} placeholder='Email' className='contactInput' type='email'/>
+                        <input {...register('name')} placeholder='Name' className='contactInput text-sm' type='text'/>
+                        <input {...register('email')} placeholder='Email' className='contactInput text-sm' type='email'/>
                     </div>
 
-                    <input {...register('subject')} placeholder='Subject' className='contactInput' type='text'/>
+                    <input {...register('subject')} placeholder='Subject' className='contactInput text-sm' type='text'/>
 
-                    <textarea {...register('message')} placeholder='Message' className='contactInput min-h-[100px]'/>
+                    <textarea {...register('message')} placeholder='Message' className='contactInput text-sm min-h-[100px] md:min-h-[80px]'/>
 
                     <button 
                         type='submit'
-                        className='bg-[#0EA5E9]/80 hover:bg-[#0EA5E9] py-2 md:py-3 px-10 rounded-md text-white 
-                        font-bold text-base transition-colors duration-300'
+                        className='bg-[#0EA5E9]/80 hover:bg-[#0EA5E9] py-2 md:py-2.5 px-10 rounded-md text-white 
+                        font-bold text-sm transition-colors duration-300'
                     >
                         Submit
                     </button>

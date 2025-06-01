@@ -14,6 +14,13 @@ export const fetchProjects = async (): Promise<Project[]> => {
     ...,
     technologies[]->
   }`;
-  const projects: Project[] = await client.fetch(query);
-  return projects;
+  
+  try {
+    const projects: Project[] = await client.fetch(query);
+    console.log('Fetched projects from Sanity:', JSON.stringify(projects, null, 2));
+    return projects;
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+    return [];
+  }
 };

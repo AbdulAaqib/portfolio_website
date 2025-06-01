@@ -22,7 +22,7 @@ function WorkExperience({ experiences }: Props) {
 
     return (
         <div className='section-container scroll-mt-[84px] h-screen flex flex-col justify-center'>
-            <div className='w-full flex justify-center mt-20 md:mt-16'>
+            <div className='w-full flex justify-center mt-20 md:mt-24'>
                 <motion.h3 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ function WorkExperience({ experiences }: Props) {
                     Experience
                 </motion.h3>
             </div>
-            <div className='w-full max-w-full md:max-w-7xl mx-auto px-2 md:px-4 mt-16 md:mt-24'>
+            <div className='w-full max-w-full md:max-w-7xl mx-auto px-2 md:px-4 mt-16 md:mt-12'>
                 {/* Navigation dots for mobile */}
                 <div className='flex justify-center space-x-2 mb-4 md:hidden'>
                     {experiences.map((_, index) => (
@@ -52,10 +52,10 @@ function WorkExperience({ experiences }: Props) {
                     {/* Navigation buttons */}
                     <button
                         onClick={handlePrevious}
-                        className='absolute left-0 top-1/2 -translate-y-1/2 translate-x-1 md:translate-x-2 
-                        bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-2 rounded-full z-10 glass-title'
+                        className='absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 md:translate-x-2 
+                        bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-1.5 md:p-2 rounded-full z-10 glass-title'
                     >
-                        <ChevronLeftIcon className='h-6 w-6 text-[#0EA5E9]' />
+                        <ChevronLeftIcon className='h-5 w-5 md:h-6 md:w-6 text-[#0EA5E9]' />
                     </button>
 
                     <div className='w-full h-full'>
@@ -76,10 +76,10 @@ function WorkExperience({ experiences }: Props) {
 
                     <button
                         onClick={handleNext}
-                        className='absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1 md:-translate-x-2 
-                        bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-2 rounded-full z-10 glass-title'
+                        className='absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 md:-translate-x-2 
+                        bg-[#0EA5E9]/30 hover:bg-[#0EA5E9]/50 p-1.5 md:p-2 rounded-full z-10 glass-title'
                     >
-                        <ChevronRightIcon className='h-6 w-6 text-[#0EA5E9]' />
+                        <ChevronRightIcon className='h-5 w-5 md:h-6 md:w-6 text-[#0EA5E9]' />
                     </button>
                 </div>
 
