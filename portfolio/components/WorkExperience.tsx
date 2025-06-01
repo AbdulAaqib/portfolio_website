@@ -21,8 +21,8 @@ function WorkExperience({ experiences }: Props) {
     };
 
     return (
-        <div className='section-container scroll-mt-[84px] h-screen flex flex-col justify-center'>
-            <div className='w-full flex justify-center mt-20 md:mt-24'>
+        <div className='section-container scroll-mt-[84px] h-screen flex flex-col justify-start pt-16 md:justify-center md:pt-0'>
+            <div className='w-full flex justify-center mt-8 md:mt-2'>
                 <motion.h3 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -33,9 +33,9 @@ function WorkExperience({ experiences }: Props) {
                     Experience
                 </motion.h3>
             </div>
-            <div className='w-full max-w-full md:max-w-7xl mx-auto px-2 md:px-4 mt-16 md:mt-12'>
+            <div className='w-full max-w-full md:max-w-7xl mx-auto px-2 md:px-4 mt-8 md:mt-4'>
                 {/* Navigation dots for mobile */}
-                <div className='flex justify-center space-x-2 mb-4 md:hidden'>
+                <div className='flex justify-center space-x-2 mb-2 md:hidden'>
                     {experiences.map((_, index) => (
                         <button
                             key={index}
@@ -48,7 +48,7 @@ function WorkExperience({ experiences }: Props) {
                 </div>
 
                 {/* Experience cards container */}
-                <div className='relative h-[500px] md:h-[600px] flex items-center'>
+                <div className='relative h-[500px] md:h-[600px] flex items-center mt-4 md:mt-0'>
                     {/* Navigation buttons */}
                     <button
                         onClick={handlePrevious}
@@ -83,7 +83,7 @@ function WorkExperience({ experiences }: Props) {
                     </button>
                 </div>
 
-                <div className='flex flex-col gap-1 mt-2'>
+                <div className='flex flex-col gap-1 mt-6 md:-mt-8'>
                     {/* Timeline indicator */}
                     <div className='relative w-full h-2 bg-gray-800 rounded-full hidden md:block'>
                         <div 
